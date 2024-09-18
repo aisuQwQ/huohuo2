@@ -1,14 +1,12 @@
-import "https://deno.land/std@0.224.0/dotenv/load.ts";
 import {createBot, Intents, startBot} from "https://deno.land/x/discordeno@18.0.1/mod.ts";
-
+import { ENV } from "./env.ts";
 
 const bot = createBot({
-    token: Deno.env.get("DISCORD_TOKEN") || "",
+    token: ENV["DISCORD_TOKEN"] || "",
     intents: 2097152*2-1, //全部つかっちゃえ
     events: {
       ready() {
         console.log("Successfully connected to gateway");
-        
       },
     },
   });
