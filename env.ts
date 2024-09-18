@@ -8,3 +8,4 @@ await dotenv.config({
 })
 
 export const ENV=Deno.env.toObject();
+console.log(ENV["DISCORD_TOKEN"]);
