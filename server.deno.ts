@@ -54,6 +54,9 @@ bot.events.voiceStateUpdate=async (bot, voiceState)=>{
 
 await startBot(bot);
 
-setInterval(()=>{
-  console.log('a');
-}, 60*1000)
+let i=0;
+Deno.serve(() => {
+  i++;
+  console.log(i)
+  return new Response(i.toString())  
+});
